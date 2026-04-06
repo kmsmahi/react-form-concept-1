@@ -1,0 +1,10 @@
+.family-tree div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding:20px;
+    border: solid 1px black;
+    border-radius: 10px;
+
+}

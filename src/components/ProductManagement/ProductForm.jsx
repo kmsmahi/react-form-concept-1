@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProductForm = ({stateHandler}) => {
+    const[error,setError]=useState([]);
     const btnHandler=(e)=>{
         e.preventDefault();
         const name = e.target.name.value;
@@ -12,6 +13,22 @@ const ProductForm = ({stateHandler}) => {
             price,
             quantity
         };
+        if(name.length===0){
+            setError('Product name is required');
+            return;
+        }
+        else if(price.length===0){
+            setError('Product price is required');
+            return;
+        }
+        else if(quantity.length===0){
+            setError('Product quantity is required');
+            return;
+        }
+        else{
+            setError('');
+        }
+
         stateHandler(newProduct);
     }
     return (
@@ -31,6 +48,7 @@ const ProductForm = ({stateHandler}) => {
                 <br />
                 <input type="submit" value="Add Product" />
             </form>
+            {error && <p style={{color: 'red'}}>{error}</p>}
         </div>
     );
 };

@@ -1,13 +1,12 @@
-import React from 'react';
 import Dad from './Dad';
 import Uncle from './Uncle';
 import Aunt from './Aunt';
-const Grandpa = () => {
+const Grandpa = ({asset}) => {
     return (
         <div>
             <h2>This is our GrandPa</h2>
             <section>
-                <Dad></Dad>
+                <Dad asset={asset}></Dad>
                 <Uncle></Uncle>
                 <Aunt></Aunt>
             </section>
